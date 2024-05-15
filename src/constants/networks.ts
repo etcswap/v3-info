@@ -1,6 +1,7 @@
 import OPTIMISM_LOGO_URL from '../assets/images/optimism.svg'
 import ARBITRUM_LOGO_URL from '../assets/images/arbitrum.svg'
 import ETHEREUM_LOGO_URL from '../assets/images/ethereum-logo.png'
+import CLASSIC_LOGO_URL from '../assets/images/classic-logo.png'
 import POLYGON_LOGO_URL from '../assets/images/polygon-logo.png'
 import CELO_LOGO_URL from '../assets/images/celo-logo.svg'
 import BNB_LOGO_URL from '../assets/images/bnb-logo.svg'
@@ -17,6 +18,7 @@ export enum SupportedNetwork {
   BNB,
   BASE,
   AVALANCHE,
+  CLASSIC,
 }
 
 export type NetworkInfo = {
@@ -30,11 +32,22 @@ export type NetworkInfo = {
   secondaryColor: string
 }
 
+export const ClassicNetworkInfo: NetworkInfo = {
+  chainId: 61 as ChainId,
+  id: SupportedNetwork.CLASSIC,
+  route: 'classic',
+  name: 'Ethereum Classic',
+  bgColor: '#02502F',
+  primaryColor: '#35D07F',
+  secondaryColor: '#9ACDB2',
+  imageURL: CLASSIC_LOGO_URL,
+}
+
 export const EthereumNetworkInfo: NetworkInfo = {
   chainId: ChainId.MAINNET,
   id: SupportedNetwork.ETHEREUM,
-  route: '',
-  name: 'Ethereum',
+  route: 'ethereum',
+  name: 'Ethereum Foundation',
   bgColor: '#fc077d',
   primaryColor: '#fc077d',
   secondaryColor: '#2172E5',
@@ -118,6 +131,7 @@ export const AvalancheNetworkInfo: NetworkInfo = {
 }
 
 export const SUPPORTED_NETWORK_VERSIONS: NetworkInfo[] = [
+  ClassicNetworkInfo,
   EthereumNetworkInfo,
   PolygonNetworkInfo,
   OptimismNetworkInfo,

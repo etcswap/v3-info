@@ -1,8 +1,8 @@
-## Uniswap Info V3
+## ETCSwap Info V3
 
-An open sourced interface for Uniswap V3 analytics. 
+An open sourced interface for ETCswap V3 analytics. 
 
-Info URL: https://info.uniswap.org/#/
+Info URL: https://info.etcswap.org/#/
 
 ## Development
 
@@ -20,5 +20,4 @@ yarn start
 
 ## Contributions
 
-**Please open all pull requests against the `master` branch.**
-CI checks will run against all PRs.
+Add assets to https://github.com/etcswap/assets/tree/master/blockchains/ethereum-classic

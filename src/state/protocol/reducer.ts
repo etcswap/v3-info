@@ -46,6 +46,7 @@ export const initialState: ProtocolState = {
   [SupportedNetwork.OPTIMISM]: DEFAULT_INITIAL_STATE,
   [SupportedNetwork.POLYGON]: DEFAULT_INITIAL_STATE,
   [SupportedNetwork.CELO]: DEFAULT_INITIAL_STATE,
+  [SupportedNetwork.CLASSIC]: DEFAULT_INITIAL_STATE,
   [SupportedNetwork.BNB]: DEFAULT_INITIAL_STATE,
   [SupportedNetwork.AVALANCHE]: DEFAULT_INITIAL_STATE,
   [SupportedNetwork.BASE]: DEFAULT_INITIAL_STATE,

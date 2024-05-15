@@ -1,6 +1,7 @@
 import { ChainId, SUPPORTED_CHAINS, SupportedChainsType } from '@uniswap/sdk-core'
 
 export const CHAIN_IDS_TO_NAMES = {
+  [ChainId[61]]: 'classic',
   [ChainId.MAINNET]: 'mainnet',
   [ChainId.GOERLI]: 'goerli',
   [ChainId.SEPOLIA]: 'sepolia',

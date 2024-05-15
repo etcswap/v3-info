@@ -10,6 +10,7 @@ import {
   polygonClient,
   celoClient,
   celoBlockClient,
+  classicClient,
   bscClient,
   bscBlockClient,
   avalancheClient,
@@ -134,6 +135,8 @@ export function useActiveNetworkVersion(): [NetworkInfo, (activeNetworkVersion: 
 export function useDataClient(): ApolloClient<NormalizedCacheObject> {
   const [activeNetwork] = useActiveNetworkVersion()
   switch (activeNetwork.id) {
+    case SupportedNetwork.CLASSIC:
+      return classicClient
     case SupportedNetwork.ETHEREUM:
       return client
     case SupportedNetwork.ARBITRUM:

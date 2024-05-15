@@ -11,6 +11,8 @@ import { ChainId } from '@uniswap/sdk-core'
 
 export function chainIdToNetworkName(networkId: ChainId) {
   switch (networkId) {
+    case 61 as ChainId:
+      return 'ethereum-classic'
     case ChainId.MAINNET:
       return 'ethereum'
     case ChainId.ARBITRUM_ONE:
@@ -29,7 +31,7 @@ export function chainIdToNetworkName(networkId: ChainId) {
 }
 
 const getTokenLogoURL = ({ address, chainId }: { address: string; chainId: ChainId }) => {
-  return `https://raw.githubusercontent.com/uniswap/assets/master/blockchains/${chainIdToNetworkName(
+  return `https://raw.githubusercontent.com/etcswap/assets/master/blockchains/${chainIdToNetworkName(
     chainId,
   )}/assets/${address}/logo.png`
 }

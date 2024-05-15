@@ -71,6 +71,7 @@ export const initialState: TokensState = {
     [SupportedNetwork.OPTIMISM]: {},
     [SupportedNetwork.POLYGON]: {},
     [SupportedNetwork.CELO]: {},
+    [SupportedNetwork.CLASSIC]: {},
     [SupportedNetwork.BNB]: {},
     [SupportedNetwork.AVALANCHE]: {},
     [SupportedNetwork.BASE]: {},
