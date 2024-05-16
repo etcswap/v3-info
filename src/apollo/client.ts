@@ -6,7 +6,7 @@ export const healthClient = new ApolloClient({
 })
 
 export const classicClient = new ApolloClient({
-  uri: 'http://143.198.11.23:8000/subgraphs/name/etcswap-v3',
+  uri: 'https://graph.etcswap.org/subgraphs/name/etcswap-v3',
   cache: new InMemoryCache({
     typePolicies: {
       Token: {

@@ -7,7 +7,7 @@ export const POLYGON_LIST =
   'https://unpkg.com/quickswap-default-token-list@1.2.2/build/quickswap-default.tokenlist.json'
 export const CELO_LIST = 'https://celo-org.github.io/celo-token-list/celo.tokenlist.json'
 export const BNB_LIST = 'https://raw.githubusercontent.com/plasmadlt/plasma-finance-token-list/master/bnb.json'
-export const CLASSIC_LIST = 'https://github.com/etcswap/tokens/blob/main/ethereum-classic/all.json'
+export const CLASSIC_LIST = 'https://raw.githubusercontent.com/etcswap/tokens/main/ethereum-classic/all.json'
 
 // lower index == higher priority for token import
 export const DEFAULT_LIST_OF_LISTS: string[] = [
