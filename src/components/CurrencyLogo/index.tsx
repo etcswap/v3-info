@@ -12,7 +12,7 @@ import { ChainId } from '@uniswap/sdk-core'
 export function chainIdToNetworkName(networkId: ChainId) {
   switch (networkId) {
     case 61 as ChainId:
-      return 'ethereum-classic'
+      return 'classic'
     case ChainId.MAINNET:
       return 'ethereum'
     case ChainId.ARBITRUM_ONE:
