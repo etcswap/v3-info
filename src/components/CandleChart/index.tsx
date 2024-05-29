@@ -48,6 +48,7 @@ const CandleChart = ({
   minHeight = DEFAULT_HEIGHT,
   ...rest
 }: LineChartProps) => {
+  data = data.slice(0, -1) // remove last candle as it is incomplete
   const theme = useTheme()
   const textColor = theme?.text3
   const chartRef = useRef<HTMLDivElement>(null)
