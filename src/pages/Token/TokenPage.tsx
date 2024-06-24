@@ -362,7 +362,7 @@ export default function TokenPage() {
               <TYPE.main>Transactions</TYPE.main>
               <DarkGreyCard>
                 {transactions ? (
-                  <TransactionTable transactions={transactions} color={backgroundColor} />
+                  <TransactionTable transactions={transactions} color={activeNetwork.primaryColor} />
                 ) : (
                   <LocalLoader fill={false} />
                 )}
