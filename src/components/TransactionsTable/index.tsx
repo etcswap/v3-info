@@ -98,7 +98,7 @@ const DataRow = ({ transaction, color }: { transaction: Transaction; color?: str
   return (
     <ResponsiveGrid>
       <ExternalLink href={getExplorerLink(activeNetwork.chainId, transaction.hash, ExplorerDataType.TRANSACTION)}>
-        <Label color={color ?? theme?.blue1} fontWeight={400}>
+        <Label color={color ?? theme?.primary1} fontWeight={400}>
           {transaction.type === TransactionType.MINT
             ? `Add ${transaction.token0Symbol} and ${transaction.token1Symbol}`
             : transaction.type === TransactionType.SWAP
@@ -118,7 +118,7 @@ const DataRow = ({ transaction, color }: { transaction: Transaction; color?: str
       <Label end={1} fontWeight={400}>
         <ExternalLink
           href={getExplorerLink(activeNetwork.chainId, transaction.sender, ExplorerDataType.ADDRESS)}
-          style={{ color: color ?? theme?.blue1 }}
+          style={{ color: color ?? theme?.primary1 }}
         >
           {shortenAddress(transaction.sender)}
         </ExternalLink>
