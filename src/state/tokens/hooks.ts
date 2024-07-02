@@ -182,13 +182,7 @@ export function useTokenPriceData(
 
   useEffect(() => {
     async function fetch() {
-      const { data, error: fetchingError } = await fetchTokenPriceData(
-        address,
-        interval,
-        startTimestamp,
-        dataClient,
-        blockClient,
-      )
+      const { data, error: fetchingError } = await fetchTokenPriceData(address, interval, startTimestamp, dataClient)
       if (data) {
         dispatch(
           updatePriceData({

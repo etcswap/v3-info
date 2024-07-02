@@ -65,7 +65,6 @@ export async function fetchTokenPriceData(
   interval: number,
   startTimestamp: number,
   dataClient: ApolloClient<NormalizedCacheObject>,
-  blockClient: ApolloClient<NormalizedCacheObject>,
 ): Promise<{
   data: PriceChartEntry[]
   error: boolean
@@ -100,7 +99,7 @@ export async function fetchTokenPriceData(
     }
 
     // fetch blocks based on timestamp
-    const blocks = await getBlocksFromTimestamps(timestamps, blockClient, 500)
+    const blocks = await getBlocksFromTimestamps(timestamps, dataClient, 500)
     if (!blocks || blocks.length === 0) {
       console.log('Error fetching blocks')
       return {
