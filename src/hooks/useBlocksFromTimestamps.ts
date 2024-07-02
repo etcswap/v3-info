@@ -8,10 +8,8 @@ import { ApolloClient, NormalizedCacheObject } from '@apollo/client'
 export const GET_BLOCKS = (timestamps: string[]) => {
   let queryString = 'query blocks {'
   queryString += timestamps.map((timestamp) => {
-    return `t${timestamp}:blocks(first: 1, orderBy: timestamp, orderDirection: desc, where: { timestamp_gt: ${timestamp}, timestamp_lt: ${
-      timestamp + 600
-    } }) {
-        number
+    return `t${timestamp}:transactions(first: 1, orderBy: timestamp, orderDirection: desc, where: { timestamp_lte: ${timestamp} }) {
+        blockNumber
       }`
   })
   queryString += '}'
@@ -38,8 +36,8 @@ export function useBlocksFromTimestamps(
   const [blocks, setBlocks] = useState<any>()
   const [error, setError] = useState(false)
 
-  const { blockClient } = useClients()
-  const activeBlockClient = blockClientOverride ?? blockClient
+  const { dataClient } = useClients()
+  const activeBlockClient = blockClientOverride ?? dataClient
 
   // derive blocks based on active network
   const networkBlocks = blocks?.[activeNetwork.id]
@@ -64,7 +62,7 @@ export function useBlocksFromTimestamps(
       const formatted = []
       for (const t in networkBlocks) {
         if (networkBlocks[t].length > 0) {
-          const number = networkBlocks[t][0]['number']
+          const number = networkBlocks[t][0]['blockNumber']
           const deploymentBlock = START_BLOCKS[activeNetwork.id]
           const adjustedNumber = number > deploymentBlock ? number : deploymentBlock
 
@@ -108,7 +106,7 @@ export async function getBlocksFromTimestamps(
       if (fetchedData[t].length > 0) {
         blocks.push({
           timestamp: t.split('t')[1],
-          number: fetchedData[t][0]['number'],
+          number: fetchedData[t][0]['blockNumber'],
         })
       }
     }

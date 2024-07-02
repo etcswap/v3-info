@@ -31,25 +31,21 @@ interface GlobalResponse {
   }[]
 }
 
-export function useFetchProtocolData(
-  dataClientOverride?: ApolloClient<NormalizedCacheObject>,
-  blockClientOverride?: ApolloClient<NormalizedCacheObject>,
-): {
+export function useFetchProtocolData(dataClientOverride?: ApolloClient<NormalizedCacheObject>): {
   loading: boolean
   error: boolean
   data: ProtocolData | undefined
 } {
   // get appropriate clients if override needed
-  const { dataClient, blockClient } = useClients()
+  const { dataClient } = useClients()
   const activeDataClient = dataClientOverride ?? dataClient
-  const activeBlockClient = blockClientOverride ?? blockClient
 
   // Aggregate TVL in inaccurate pools. Offset Uniswap aggregate TVL by this amount.
   const tvlOffset = useTVLOffset()
 
   // get blocks from historic timestamps
   const [t24, t48] = useDeltaTimestamps()
-  const { blocks, error: blockError } = useBlocksFromTimestamps([t24, t48], activeBlockClient)
+  const { blocks, error: blockError } = useBlocksFromTimestamps([t24, t48], activeDataClient)
   const [block24, block48] = blocks ?? []
 
   // fetch all data
