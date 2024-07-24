@@ -180,6 +180,9 @@ export default function Header() {
           >
             Tokens
           </StyledNavLink>
+          <StyledNavLink id={`pool-nav-link`} to="https://v3.etcswap.org" $isActive={pathname === '/'}>
+            Swap
+          </StyledNavLink>
         </HeaderLinks>
       </HeaderRow>
       <HeaderControls>
