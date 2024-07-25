@@ -116,7 +116,7 @@ export default function Home() {
       .filter(notEmpty)
   }, [allTokens])
 
-  const [volumeWindow, setVolumeWindow] = useState(VolumeWindow.weekly)
+  const [volumeWindow, setVolumeWindow] = useState(VolumeWindow.daily)
 
   const tvlValue = useMemo(() => {
     if (liquidityHover) {
