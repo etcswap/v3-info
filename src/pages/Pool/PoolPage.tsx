@@ -2,7 +2,7 @@ import React, { useMemo, useState, useEffect } from 'react'
 import styled from 'styled-components'
 import { useColor } from 'hooks/useColor'
 import { ThemedBackground, PageWrapper } from 'pages/styled'
-import { ExplorerDataType, feeTierPercent, getExplorerLink, isAddress } from 'utils'
+import { ExplorerDataType, feeTierPercent, getExplorerLink, isAddress, getSwapLink } from 'utils'
 import { AutoColumn } from 'components/Column'
 import { RowBetween, RowFixed, AutoRow } from 'components/Row'
 import { TYPE, StyledInternalLink } from 'theme'
@@ -13,7 +13,7 @@ import useTheme from 'hooks/useTheme'
 import CurrencyLogo from 'components/CurrencyLogo'
 import { formatDollarAmount, formatAmount } from 'utils/numbers'
 import Percent from 'components/Percent'
-import { ButtonPrimary, ButtonGray, SavedIcon } from 'components/Button'
+import { ButtonPrimary, ButtonGray, SavedIcon, SwapIcon } from 'components/Button'
 import { DarkGreyCard, GreyCard, GreyBadge } from 'components/Card'
 import { usePoolDatas, usePoolChartData, usePoolTransactions } from 'state/pools/hooks'
 import { unixToDate } from 'utils/date'
@@ -164,6 +164,9 @@ function PoolPage({ address }: { address: string }) {
                 )} `}</TYPE.label>
               </AutoRow>
               <RowFixed gap="10px" align="center">
+                <StyledExternalLink href={getSwapLink(poolData.token0.address, poolData.token1.address)}>
+                  <SwapIcon />
+                </StyledExternalLink>
                 <SavedIcon fill={savedPools.includes(address)} onClick={() => addSavedPool(address)} />
                 <StyledExternalLink href={getExplorerLink(activeNetwork.chainId, address, ExplorerDataType.ADDRESS)}>
                   <ExternalLink stroke={theme?.text2} size={'17px'} style={{ marginLeft: '12px' }} />
