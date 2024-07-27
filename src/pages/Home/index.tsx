@@ -65,6 +65,7 @@ export default function Home() {
     return Object.values(allPoolData)
       .map((p) => p.data)
       .filter(notEmpty)
+      .filter((p) => p.volumeUSDWeek > 0)
   }, [allPoolData])
 
   // if hover value undefined, reset to current day value
@@ -114,6 +115,7 @@ export default function Home() {
     return Object.values(allTokens)
       .map((t) => t.data)
       .filter(notEmpty)
+      .filter((val) => val.tvlUSD > 0)
   }, [allTokens])
 
   const [volumeWindow, setVolumeWindow] = useState(VolumeWindow.daily)
