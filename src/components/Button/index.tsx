@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import { darken, lighten } from 'polished'
 
 import { RowBetween } from '../Row'
-import { ChevronDown, Check, Star, DollarSign } from 'react-feather'
+import { ChevronDown, Check, Star, RefreshCw } from 'react-feather'
 import { Button as RebassButton, ButtonProps } from 'rebass/styled-components'
 import useTheme from 'hooks/useTheme'
 
@@ -403,7 +403,7 @@ export const SwapIcon = ({ size = '20px', ...rest }: { size?: string } & HTMLAtt
   const theme = useTheme()
   return (
     <HoverIcon {...rest}>
-      <DollarSign stroke={theme?.text2} size={size} />
+      <RefreshCw stroke={theme?.text2} size={size} />
     </HoverIcon>
   )
 }
