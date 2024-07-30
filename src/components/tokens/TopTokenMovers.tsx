@@ -67,6 +67,7 @@ export default function TopTokenMovers() {
         return a && b ? (Math.abs(a?.priceUSDChange) > Math.abs(b?.priceUSDChange) ? -1 : 1) : -1
       })
       .slice(0, Math.min(20, Object.values(allTokens).length))
+      .filter((p) => p.data && p.data.tvlUSD > 0)
   }, [allTokens])
 
   const increaseRef = useRef<HTMLDivElement>(null)
