@@ -95,21 +95,21 @@ export default function Menu() {
 
       {isOpen && (
         <MenuFlyout>
-          <MenuItem id="link" href="https://etcswap.org/">
+          <MenuItem id="link" href="https://v3.etcswap.org">
             <Info size={14} />
-            About
+            ETCswap V3
           </MenuItem>
-          <MenuItem id="link" href="https://docs.etcswap.org/">
+          <MenuItem id="link" href="https://x.com/ETCswap_org">
+            <MessageCircle size={14} />
+            Twitter
+          </MenuItem>
+          <MenuItem id="link" href="https://docs.etcswap.org">
             <BookOpen size={14} />
             Docs
           </MenuItem>
-          <MenuItem id="link" href="https://github.com/etcswap/">
+          <MenuItem id="link" href="https://github.com/etcswap">
             <Code size={14} />
             Github
-          </MenuItem>
-          <MenuItem id="link" href="https://ethereumclassic.org/discord">
-            <MessageCircle size={14} />
-            Discord
           </MenuItem>
         </MenuFlyout>
       )}
