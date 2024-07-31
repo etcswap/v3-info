@@ -97,7 +97,7 @@ export default function Menu() {
         <MenuFlyout>
           <MenuItem id="link" href="https://v3.etcswap.org">
             <Info size={14} />
-            ETCswap V3
+            V3 App
           </MenuItem>
           <MenuItem id="link" href="https://x.com/ETCswap_org">
             <MessageCircle size={14} />
