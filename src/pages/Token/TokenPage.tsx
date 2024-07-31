@@ -9,7 +9,7 @@ import {
 import styled from 'styled-components'
 import { useColor } from 'hooks/useColor'
 import { ThemedBackground, PageWrapper } from 'pages/styled'
-import { shortenAddress, getExplorerLink, currentTimestamp, ExplorerDataType } from 'utils'
+import { shortenAddress, getExplorerLink, currentTimestamp, ExplorerDataType, getSwapLink } from 'utils'
 import { AutoColumn } from 'components/Column'
 import { RowBetween, RowFixed, AutoRow, RowFlat } from 'components/Row'
 import { TYPE, StyledInternalLink } from 'theme'
@@ -20,7 +20,7 @@ import useTheme from 'hooks/useTheme'
 import CurrencyLogo from 'components/CurrencyLogo'
 import { formatDollarAmount } from 'utils/numbers'
 import Percent from 'components/Percent'
-import { ButtonPrimary, ButtonGray, SavedIcon } from 'components/Button'
+import { ButtonPrimary, ButtonGray, SavedIcon, SwapIcon } from 'components/Button'
 import { DarkGreyCard, LightGreyCard } from 'components/Card'
 import { usePoolDatas } from 'state/pools/hooks'
 import PoolTable from 'components/pools/PoolTable'
@@ -196,6 +196,10 @@ export default function TokenPage() {
                     </StyledExternalLink>
                   </AutoRow>
                   <RowFixed align="center" justify="center">
+                    <StyledExternalLink href={getSwapLink(formattedAddress)}>
+                      <SwapIcon />
+                    </StyledExternalLink>
+                    <div>&nbsp;&nbsp;</div>
                     <SavedIcon
                       fill={savedTokens.includes(formattedAddress)}
                       onClick={() => addSavedToken(formattedAddress)}
