@@ -164,7 +164,7 @@ function PoolPage({ address }: { address: string }) {
                 )} `}</TYPE.label>
               </AutoRow>
               <RowFixed gap="10px" align="center">
-                <StyledExternalLink href={getSwapLink(poolData.token0.address, poolData.token1.address)}>
+                <StyledExternalLink href={getSwapLink(poolData.token0.address)}>
                   <SwapIcon />
                 </StyledExternalLink>
                 <SavedIcon fill={savedPools.includes(address)} onClick={() => addSavedPool(address)} />

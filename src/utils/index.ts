@@ -69,9 +69,9 @@ export function getExplorerLink(chainId: number, data: string, type: ExplorerDat
   }
 }
 
-export function getSwapLink(address0: string, address1?: string): string {
+export function getSwapLink(address0: string): string {
   const url = 'https://v3.etcswap.org/#/swap'
-  return `${url}?chain=classic&inputCurrency=${address0}&outputCurrency=${address1}&exactAmount=1`
+  return `${url}?chain=classic&inputCurrency=ETC&outputCurrency=${address0}&exactAmount=1`
 }
 
 export const currentTimestamp = () => new Date().getTime()
