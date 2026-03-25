@@ -1,0 +1,31 @@
+# ETCswap V3 Analytics — Concentrated Liquidity DEX Data on Ethereum Classic
+
+> Real-time analytics dashboard for ETCswap V3, the concentrated liquidity DEX on Ethereum Classic. Track TVL, volume, tokens, pools, and transactions.
+
+## About
+
+ETCswap V3 Analytics provides real-time data for the ETCswap V3 protocol on Ethereum Classic (ETC). It tracks total value locked (TVL), trading volume, token prices, pool performance, and individual transactions across the concentrated liquidity AMM.
+
+## Key Metrics
+
+- Total Value Locked (TVL)
+- 24h / 7d / 30d trading volume
+- Token prices and price charts
+- Pool liquidity and fee earnings
+- Transaction history (swaps, adds, removes)
+
+## Protocol Details
+
+- Network: Ethereum Classic (Chain ID 61)
+- AMM Type: Concentrated Liquidity Market Maker (CLMM)
+- Fee Tiers: 0.01%, 0.05%, 0.3%, 1%
+- Based on Uniswap V3 protocol, adapted for ETC
+
+## Web Properties
+
+- v3-info.etcswap.org — This site (V3 analytics)
+- v3.etcswap.org — ETCswap V3 trading interface
+- v2.etcswap.org — ETCswap V2 trading interface
+- v2-info.etcswap.org — ETCswap V2 analytics
+- etcswap.org — ETCswap landing page
+- github.com/etcswap — Source code
