@@ -177,10 +177,6 @@ export default function TransactionTable({
           .filter((x) => {
             return txFilter === undefined || x.type === txFilter
           })
-          .filter((x, i, a) => {
-            // filter out duplicated transaction hashes
-            return a.findIndex((t) => t.hash === x.hash) === i
-          })
           .slice(maxItems * (page - 1), page * maxItems)
       : []
   }, [transactions, maxItems, page, sortField, sortDirection, txFilter])
